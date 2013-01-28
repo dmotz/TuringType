@@ -73,7 +73,7 @@ var corpus1 =
 I am TuringType.\n\
 I am a naïve simulation of a human typing. I was written in a few minutes (and a few lines of CoffeeScript), so I'm not meant to be very accurate. I'm just a parlor trick you can use in your own projects.\n\
 Notice that I occasionally make mistakes. Please excuse me, and note that you can easily change my typing accuracy level and speed.\n\
-Watch this:";
+Watch this...";
 
 var corpus2 =
 "Use me like this:\n\
@@ -109,6 +109,16 @@ Enjoy. Click the Github link in the upper right to see my code.";
 
         var el = document.getElementById('test');
         new TuringType(el, corpus1, { callback: cb1 });
+    </script>
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30392798-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
     </script>
 </body>
 </html>
