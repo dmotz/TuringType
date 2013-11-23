@@ -9,6 +9,7 @@ class window.TuringType
 
   constructor: (@el, @text, @options = {}) ->
     return new TuringType arguments... unless @ instanceof TuringType
+    @el  = document.querySelector @el if typeof @el is 'string'
     @len = @text.length
     @i = 0
     {accuracy, interval, @callback} = @options
