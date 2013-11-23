@@ -8,6 +8,7 @@ class window.TuringType
   keys: 'qwertyuiop[]asdfghjklzxcvbnm,./;-='.split ''
 
   constructor: (@el, @text, @options = {}) ->
+    return new TuringType arguments... unless @ instanceof TuringType
     @len = @text.length
     @i = 0
     {accuracy, interval, @callback} = @options
