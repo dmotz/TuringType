@@ -1,20 +1,21 @@
-rand = Math.random
+rand    = Math.random
 {floor} = Math
 
 class window.TuringType
 
-  int: 100
+  int:      100
   accuracy: .95
-  keys: 'qwertyuiop[]asdfghjklzxcvbnm,./;-='.split ''
+  keys:     'qwertyuiop[]asdfghjklzxcvbnm,./;-='.split ''
 
   constructor: (@el, @text, @options = {}) ->
     return new TuringType arguments... unless @ instanceof TuringType
     @el  = document.querySelector @el if typeof @el is 'string'
     @len = @text.length
-    @i = 0
+    @i   = 0
     {accuracy, interval, @callback} = @options
     @accuracy = accuracy ? @accuracy
-    @int = interval ? @int
+    @int      = interval ? @int
+
     if tag = @el.tagName.toLowerCase() is 'textarea' or tag is 'input'
       @attr = 'value'
       @el.focus()
@@ -29,7 +30,7 @@ class window.TuringType
       @el[@attr] += @keys[floor rand() * @keys.length]
       @timer = setTimeout =>
         @el[@attr] = @text.slice 0, @i
-        @timer = setTimeout @type, rand() * @int + @int * .8
+        @timer     = setTimeout @type, rand() * @int + @int * .8
       , @int * 1.5
     else
       @el[@attr] += @text[@i++]
