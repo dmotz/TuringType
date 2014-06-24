@@ -5,7 +5,7 @@ class window.TuringType
 
   int:      100
   accuracy: .95
-  keys:     'qwertyuiop[]asdfghjklzxcvbnm,./;-='.split ''
+  keys:     'qwertyuiopasdfghjklzxcvbnm,./;-=[]'.split ''
 
   constructor: (@el, @text, @options = {}) ->
     return new TuringType arguments... unless @ instanceof TuringType
