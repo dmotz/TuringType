@@ -1,3 +1,9 @@
+# TuringType
+# 0.0.1
+# Dan Motzenbecker
+# http://oxism.com
+# Copyright 2014, MIT License
+
 rand    = Math.random
 {floor} = Math
 
