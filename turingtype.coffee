@@ -7,7 +7,7 @@
 rand    = Math.random
 {floor} = Math
 
-class window.TuringType
+class TuringType
 
   int:      100
   accuracy: .95
@@ -52,3 +52,12 @@ class window.TuringType
   pause: ->
     clearTimeout @timer
     @el[@attr]
+
+
+if module?.exports
+  module.exports = TuringType
+else if define?.amd
+  define -> TuringType
+else
+  window.TuringType = TuringType
+
