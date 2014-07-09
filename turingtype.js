@@ -21,11 +21,7 @@
       this.options = options != null ? options : {};
       this.type = __bind(this.type, this);
       if (!(this instanceof TuringType)) {
-        return (function(func, args, ctor) {
-          ctor.prototype = func.prototype;
-          var child = new ctor, result = func.apply(child, args);
-          return Object(result) === result ? result : child;
-        })(TuringType, arguments, function(){});
+        return new TuringType(this.el, this.text, this.options);
       }
       if (typeof this.el === 'string') {
         this.el = document.querySelector(this.el);
@@ -49,7 +45,7 @@
         return typeof this.callback === "function" ? this.callback() : void 0;
       }
       if (rand() > this.accuracy) {
-        this.el[this.attr] += this.keys[floor(rand() * this.keys.length)];
+        this.el[this.attr] = this.text.slice(0, this.i) + this.keys[floor(rand() * this.keys.length)];
         return this.timer = setTimeout((function(_this) {
           return function() {
             _this.el[_this.attr] = _this.text.slice(0, _this.i);
@@ -57,7 +53,7 @@
           };
         })(this), this.int * 1.5);
       } else {
-        this.el[this.attr] += this.text[this.i++];
+        this.el[this.attr] = this.text.slice(0, this.i++);
         return this.timer = setTimeout(this.type, (function(_this) {
           return function() {
             var t;
