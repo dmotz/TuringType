@@ -8,7 +8,7 @@ class window.TuringType
   keys:     'qwertyuiopasdfghjklzxcvbnm,./;-=[]'.split ''
 
   constructor: (@el, @text, @options = {}) ->
-    return new TuringType arguments... unless @ instanceof TuringType
+    return new TuringType @el, @text, @options unless @ instanceof TuringType
     @el  = document.querySelector @el if typeof @el is 'string'
     @len = @text.length
     @i   = 0
@@ -27,15 +27,15 @@ class window.TuringType
   type: =>
     return @callback?() if @i is @len
     if rand() > @accuracy
-      @el[@attr] += @keys[floor rand() * @keys.length]
-      @timer = setTimeout =>
+      @el[@attr] = @text.slice(0, @i) + @keys[floor rand() * @keys.length]
+      @timer     = setTimeout =>
         @el[@attr] = @text.slice 0, @i
         @timer     = setTimeout @type, rand() * @int + @int * .8
       , @int * 1.5
     else
-      @el[@attr] += @text[@i++]
-      @timer = setTimeout @type, do =>
-        t = rand() * @int + @int * .1
+      @el[@attr] = @text.slice 0, @i++
+      @timer     = setTimeout @type, do =>
+        t  = rand() * @int + @int * .1
         t += rand() * @int if @text[@i] is ' '
         t += rand() * @int * 3 if @text[@i] is '.' or @text[@i] is ','
         t += @int * 2 if rand() > .97
