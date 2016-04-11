@@ -1,0 +1,28 @@
+{
+  "name": "turing-type",
+  "version": "0.0.1",
+  "description": "Simple human typing effect",
+  "main": "turingtype.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmotz/TuringType.git"
+  },
+  "keywords": [
+    "typing",
+    "frontend",
+    "effect"
+  ],
+  "author": {
+    "name": "Dan Motzenbecker",
+    "email": "dan@oxism.com",
+    "url": "http://oxism.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmotz/TuringType/issues"
+  },
+  "homepage": "http://oxism.com/TuringType/",
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
+  }
+}
