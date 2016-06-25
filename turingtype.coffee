@@ -31,7 +31,7 @@ class TuringType
 
 
   type: =>
-    return @callback?() if @i is @len
+    return @callback?() if @i is @len + 1
     if rand() > @accuracy
       @el[@attr] = @text.slice(0, @i) + @keys[floor rand() * @keys.length]
       @timer     = setTimeout =>
