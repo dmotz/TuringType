@@ -54,10 +54,15 @@ class TuringType
     @el[@attr]
 
 
+  clear: (n = @len) =>
+    return if n is -2
+    @el[@attr] = @text.slice 0, @i--
+    setTimeout @clear.bind(@, --n), rand() * @int
+
+
 if module?.exports
   module.exports = TuringType
 else if define?.amd
   define -> TuringType
 else
   window.TuringType = TuringType
-
