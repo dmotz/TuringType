@@ -1,4 +1,4 @@
-#[TuringType](http://oxism.com/TuringType)
+# [TuringType](http://oxism.com/TuringType)
 #### A naïve human typing simulation effect
 [Dan Motzenbecker](http://oxism.com), MIT License
 
