@@ -1,6 +1,6 @@
 {
   "name": "turing-type",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple human typing effect",
   "main": "turingtype.js",
   "repository": {

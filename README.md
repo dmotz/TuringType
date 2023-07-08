@@ -15,7 +15,22 @@ new TuringType(domElement, 'Just some text.');
 
 With some options:
 ```javascript
-new TuringType(domElement, 'Terrible but fast typist.', { accuracy: 0.3, interval: 20, callback: allDone });
+new TuringType(domElement, 'Terrible but fast typist.', {
+  accuracy: 0.3,
+  interval: 20,
+  callback: allDone
+});
 ```
+
+You can also clear the input in a natural manner with `.clear()`:
+
+```javascript
+var typer = new TuringType(element, "let's season their broth", {
+  callback: function() {setTimeout(typer.clear, 1000)}
+});
+```
+
+`clear()` is automatically bound to instances and accepts an optional integer
+indicating the number of characters to remove.
 
 Have fun.

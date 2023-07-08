@@ -1,5 +1,5 @@
 # TuringType
-# 0.0.1
+# 0.0.2
 # Dan Motzenbecker
 # http://oxism.com
 # Copyright 2014, MIT License
@@ -31,7 +31,7 @@ class TuringType
 
 
   type: =>
-    return @callback?() if @i is @len
+    return @callback?() if @i is @len + 1
     if rand() > @accuracy
       @el[@attr] = @text.slice(0, @i) + @keys[floor rand() * @keys.length]
       @timer     = setTimeout =>
@@ -54,10 +54,15 @@ class TuringType
     @el[@attr]
 
 
+  clear: (n = @len) =>
+    return if n is -2
+    @el[@attr] = @text.slice 0, @i--
+    setTimeout @clear.bind(@, --n), rand() * @int
+
+
 if module?.exports
   module.exports = TuringType
 else if define?.amd
   define -> TuringType
 else
   window.TuringType = TuringType
-
