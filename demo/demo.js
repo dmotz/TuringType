@@ -1,7 +1,7 @@
 var corpus1 =
 "Hello.\n\
 I am TuringType.\n\
-I am a naïve simulation of a human typing. I was written in a few minutes (and a few lines of CoffeeScript), so I'm not meant to be very accurate. I'm just a parlor trick you can use in your own projects.\n\
+I am a naive simulation of a human typing. I was written in a few minutes (and a few lines of CoffeeScript), so I'm not meant to be very accurate. I'm just a parlor trick you can use in your own projects.\n\
 Notice that I occasionally make mistakes. Please excuse me, and note that you can easily change my typing accuracy level and speed.\n\
 Watch this...";
 
